@@ -8,11 +8,30 @@ import SimpleList from "./components/SimpleList";
 import StudentList from "./components/StudentList";
 import ProjectList from "./components/ProjectList";
 import MovieList from "./components/MovieList";
+import Spinner from "./components/Spinner";
+import ImprovedMovieList from "./components/ImprovedMovieList";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  if (isLoading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div className="App">
+        <h1>Conditional Rendering</h1>
+        {/* <MovieList /> */}
+        <ImprovedMovieList />
+      </div>
+    );
+  }
+}
+{
+  /*
   const [theme, setTheme] = useState("light");
   const [username, setUsername] = useState("");
   const [city, setCity] = useState("city");
+  
   return (
     <div className={"App " + theme}>
       <h1>State and Events Lesson</h1>
@@ -39,15 +58,16 @@ function App() {
       <hr />
       <h1>List and Keys Lesson</h1>
 
-      {/*<SimpleList />
+      <SimpleList />
       /* USING KEYS, not best practice 
-      <StudentList /> */}
-      {/* USING IDs AS KEYS, BEST PRACTICE 
-      <ProjectList /> */}
-    <MovieList />
-
-    </div>
+      <StudentList />
+      /* USING IDs AS KEYS, BEST PRACTICE
+      <ProjectList />
+       <MovieList />
+    
+    
   );
 }
-
+*/
+}
 export default App;
