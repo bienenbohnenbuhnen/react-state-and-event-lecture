@@ -4,6 +4,10 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import Counter from "./components/Counter";
+import SimpleList from "./components/SimpleList";
+import StudentList from "./components/StudentList";
+import ProjectList from "./components/ProjectList";
+import MovieList from "./components/MovieList";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -11,6 +15,7 @@ function App() {
   const [city, setCity] = useState("city");
   return (
     <div className={"App " + theme}>
+      <h1>State and Events Lesson</h1>
       <Counter />
       <select onChange={(event) => setTheme(event.target.value)}>
         <option value="light">light</option>
@@ -30,6 +35,17 @@ function App() {
       {username}
       <hr />
       {city}
+
+      <hr />
+      <h1>List and Keys Lesson</h1>
+
+      {/*<SimpleList />
+      /* USING KEYS, not best practice 
+      <StudentList /> */}
+      {/* USING IDs AS KEYS, BEST PRACTICE 
+      <ProjectList /> */}
+    <MovieList />
+
     </div>
   );
 }
